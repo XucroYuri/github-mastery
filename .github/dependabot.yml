@@ -1,0 +1,9 @@
+version: 2
+updates:
+  # 本仓库无代码依赖，此文件作为课程示例展示 Dependabot 配置
+  # 如后续添加自动化脚本，可启用以下配置：
+  # - package-ecosystem: "pip"
+  #   directory: "/"
+  #   schedule:
+  #     interval: "weekly"
+  #   open-pull-requests-limit: 5
