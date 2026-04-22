@@ -20,9 +20,9 @@ github-mastery/
 │   │   ├── config.ts          # VitePress 主配置
 │   │   └── plugins/
 │   │       └── githubAlerts.ts # > [!NOTE] 兼容插件
-│   ├── index.md               # 首页
 │   └── public/
 │       └── logo.svg           # 站点 Logo（可选）
+├── index.md                   # 首页（在仓库根目录，srcDir 范围内）
 ├── 00-前言与学习路线/          # 现有课程内容（不移动）
 ├── 01-基础操作/
 ├── 02-协作与工作流/
@@ -48,6 +48,14 @@ github-mastery/
 export default defineConfig({
   // 源文件在仓库根目录（docs 的上级）
   srcDir: '..',
+  // 排除非课程文件，避免它们被生成页面
+  srcExclude: [
+    'README.md',        // 仓库根 README（与 index.md 路由冲突）
+    'CONTRIBUTING.md',  // 贡献指南
+    'REFERENCES.md',    // 参考资料索引（50KB+）
+    '.github/**',       // Issue/PR 模板
+    'docs/**',          // VitePress 项目目录本身
+  ],
   // 输出到 docs/.vitepress/dist
   outDir: '.vitepress/dist',
   // GitHub Pages 部署路径
@@ -59,6 +67,8 @@ export default defineConfig({
   lang: 'zh-CN',
   // 功能
   lastUpdated: true,
+  // 注意：cleanUrls 在 GitHub Pages 上不完全生效（.html 重定向），
+  // 但保持开启可让本地开发体验更好
   cleanUrls: true,
 })
 ```
@@ -130,9 +140,14 @@ VitePress 使用不同的语法：
 :::
 ```
 
-### 方案：markdown-it 插件
+### 方案：原始字符串替换
 
-编写自定义 markdown-it 插件（`docs/.vitepress/plugins/githubAlerts.ts`），在构建时将 GitHub 语法转换为 VitePress 渲染。**不修改原始 md 文件。**
+编写 VitePress 构建钩子（`docs/.vitepress/plugins/githubAlerts.ts`），在 markdown-it 处理前对原始 Markdown 文本进行正则替换。**不修改原始 md 文件。**
+
+解析策略：
+- 使用正则匹配 `> [!TYPE]\n> content` 模式（支持多行 `>` 引用延续）
+- 将匹配到的块替换为 `:::type\ncontent\n:::` 格式
+- 需处理的边界情况：告示块内包含空行（`>\n> text`）、告示块与非告示引用块之间的转换
 
 映射规则：
 - `> [!NOTE]` → `:::info`
@@ -147,7 +162,9 @@ VitePress 使用不同的语法：
 
 ## 首页设计
 
-`docs/index.md` 使用 VitePress frontmatter 自定义布局：
+`index.md`（仓库根目录）使用 VitePress frontmatter 自定义布局：
+
+> 注意：首页文件放在仓库根目录 `index.md`，而非 `docs/index.md`。因为 `srcDir: '..'` 指向仓库根目录，VitePress 只会扫描 srcDir 内的文件，`docs/index.md` 不在扫描范围内。`srcExclude` 已排除原有的 `README.md` 避免路由冲突。
 
 ```yaml
 ---
@@ -195,6 +212,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # 完整 git 历史，确保 lastUpdated 时间戳准确
       - uses: actions/setup-node@v4
         with:
           node-version: 20
@@ -261,7 +280,7 @@ docs/.vitepress/cache/
 1. 初始化 package.json 和安装依赖
 2. 创建 docs/.vitepress/config.ts（完整配置）
 3. 编写 githubAlerts markdown-it 插件
-4. 创建首页 docs/index.md
+4. 创建首页 index.md（仓库根目录）
 5. 更新 .gitignore
 6. 创建 deploy.yml workflow
 7. 验证本地构建成功
