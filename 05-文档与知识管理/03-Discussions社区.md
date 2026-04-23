@@ -185,7 +185,7 @@ gh api "search/discussions?q=repo:<owner>/<repo>+自定义域名"
 ```
 
 结合脚本，你可以实现讨论的定期汇总、未回答问题提醒等自动化流程。
-参见 [GitHub Pages 建站](02-GitHub-Pages建站.md) 了解更多自动化部署的实践。
+参见 [GitHub Pages 建站](02-GitHub-Pages建站) 了解更多自动化部署的实践。
 
 ### 与 GitHub Actions 集成
 
@@ -268,7 +268,7 @@ GitHub CLI 中的 `gh api search/discussions` 则适合批量查询场景。
 
 完全支持。Discussions 的编辑器支持 GFM 语法，包括代码块和语法高亮。
 使用三个反引号加语言名即可，与 README 和 Wiki 中的写法一致。
-参见 [README 与文档最佳实践](04-README与文档最佳实践.md) 中的代码片段写法。
+参见 [README 与文档最佳实践](04-README与文档最佳实践) 中的代码片段写法。
 
 ## 参考链接
 

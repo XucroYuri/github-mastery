@@ -117,10 +117,10 @@ greet('GitHub'); // => Hello, GitHub!
 
 | 文档 | 说明 |
 |------|------|
-| [安装指南](docs/installation.md) | 详细的安装步骤与环境要求 |
-| [API 参考](docs/api-reference.md) | 完整的 API 文档 |
-| [贡献指南](CONTRIBUTING.md) | 如何参与项目开发 |
-| [变更日志](CHANGELOG.md) | 版本更新记录 |
+| [安装指南](docs/installation) | 详细的安装步骤与环境要求 |
+| [API 参考](docs/api-reference) | 完整的 API 文档 |
+| [贡献指南](CONTRIBUTING) | 如何参与项目开发 |
+| [变更日志](CHANGELOG) | 版本更新记录 |
 ```
 
 这样做的好处是 README 保持简洁，而详细内容分布在独立文件中，方便维护和协作。
@@ -149,7 +149,7 @@ Mermaid 支持多种图表类型：`graph`（流程图）、`sequenceDiagram`（
 如果你的项目面向国际用户，可以考虑提供多语言版本的 README：
 
 ```markdown
-[English](README.md) | [简体中文](README.zh-CN.md) | [日本語](README.ja.md)
+[English](README) | [简体中文](README.zh-CN) | [日本語](README.ja)
 ```
 
 推荐做法是将英文作为默认 `README.md`，其他语言版本使用 `README.<lang>.md` 命名。
@@ -227,7 +227,7 @@ GitHub 支持 Markdown（.md）、reStructuredText（.rst）、Textile（.textil
 使用 `markdown-link-check` 检测死链接；用 `remark-lint` 统一 Markdown 格式；
 在 Pull Request 模板中提醒贡献者同步更新 README。另外，将 README 中容易过期的信息
 （如安装版本号）提取到配置文件或 CI 脚本中，通过徽章动态展示，可以减少手动维护的成本。
-参见 [Wiki 使用指南](01-Wiki-使用指南.md) 了解如何用 Wiki 分担详细文档的维护压力。
+参见 [Wiki 使用指南](01-Wiki-使用指南) 了解如何用 Wiki 分担详细文档的维护压力。
 
 ## 参考链接
 

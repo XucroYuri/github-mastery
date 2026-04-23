@@ -17,3 +17,6 @@ Thumbs.db
 node_modules/
 docs/.vitepress/dist/
 docs/.vitepress/cache/
+
+# OMC state
+.omc/

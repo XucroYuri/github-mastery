@@ -411,7 +411,7 @@ gh api graphql -f query='
 ' -f owner=OWNER -f repo=REPO
 ```
 
-关于 GraphQL API 的更多用法，参见 [GitHub API 与集成](03-GitHub-API与集成.md)。
+关于 GraphQL API 的更多用法，参见 [GitHub API 与集成](03-GitHub-API与集成)。
 
 ## 常见问题
 

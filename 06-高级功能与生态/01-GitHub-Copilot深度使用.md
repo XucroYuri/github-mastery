@@ -214,7 +214,7 @@ Copilot 在 Codespaces 中同样可用，且配置会自动继承：
 2. 自定义指令（`.github/copilot-instructions.md`）随仓库一起加载。
 3. Chat、补全和 Edits 功能与本地开发环境完全一致。
 
-关于 Codespaces 的配置和使用，参见 [Codespaces 云开发](05-Codespaces云开发.md)。
+关于 Codespaces 的配置和使用，参见 [Codespaces 云开发](05-Codespaces云开发)。
 
 ### 团队级 Copilot 管理
 

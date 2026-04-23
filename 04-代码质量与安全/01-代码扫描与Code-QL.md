@@ -219,7 +219,7 @@ queries:
 
 > [!NOTE]
 > 排除路径只能减少扫描时间和噪声告警，但不能完全替代依赖项的安全检查。
-> 对于第三方依赖的漏洞，应使用 [Dependabot](02-依赖审查与Dependabot.md) 进行管理。
+> 对于第三方依赖的漏洞，应使用 [Dependabot](02-依赖审查与Dependabot) 进行管理。
 
 ### 在 Pull Request 中展示扫描结果
 
@@ -228,7 +228,7 @@ CodeQL 支持在 Pull Request 的 Checks 区域和 diff 视图中直接展示新
 并且在仓库 Settings 中开启了 **"Use code scanning in pull requests"** 选项。
 
 团队可以设置"扫描未通过则阻止合并"的规则，
-将安全检查嵌入到 [分支保护](04-分支保护与规则集.md) 策略中，
+将安全检查嵌入到 [分支保护](04-分支保护与规则集) 策略中，
 确保每一行代码在合并前都经过安全审查。
 
 ### 使用 CodeQL 数据库进行本地分析
@@ -282,7 +282,7 @@ codeql database analyze ./codeql-db \
 
 可以。在告警详情页中点击 **Create issue** 按钮，告警信息会自动填充到 Issue 模板中。
 如果需要批量创建，可以通过 GitHub Actions 工作流调用 GitHub API 自动将高危告警转化为 Issue。
-也可以结合 [Actions 入门](../03-自动化与CI-CD/01-GitHub-Actions-入门.md) 的知识编写自动化脚本。
+也可以结合 [Actions 入门](../03-自动化与CI-CD/01-GitHub-Actions-入门) 的知识编写自动化脚本。
 
 ### Q: 如何查看组织级别的安全态势？
 

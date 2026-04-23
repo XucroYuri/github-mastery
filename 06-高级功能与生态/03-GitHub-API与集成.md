@@ -350,7 +350,7 @@ done
 4. **缓存不变数据**——使用 ETag 和条件请求，避免重复获取未变化的数据。
 5. **选择合适的 Token 类型**——Fine-grained Token 提供最小权限原则，比 Classic Token 更安全。
 
-关于在 GitHub App 中使用 API 的完整流程，参见 [GitHub Apps 与 OAuth App](04-GitHub-Apps与OAuth-App.md)。
+关于在 GitHub App 中使用 API 的完整流程，参见 [GitHub Apps 与 OAuth App](04-GitHub-Apps与OAuth-App)。
 
 ## 常见问题
 

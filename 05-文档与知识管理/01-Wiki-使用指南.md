@@ -56,8 +56,8 @@ Wiki 默认对所有有仓库写权限的人可见可编辑。对于公开仓库
 
 ## 相关资源
 
-- [贡献指南](../CONTRIBUTING.md)
-- [更新日志](../CHANGELOG.md)
+- [贡献指南](../CONTRIBUTING)
+- [更新日志](../CHANGELOG)
 ```
 
 3. 保存后，侧栏会自动出现在所有 Wiki 页面上。
@@ -138,7 +138,7 @@ Wiki 内部链接使用页面名作为路径：
 详见 [架构设计](Architecture) 页面。
 
 <!-- 从 Wiki 链接到主仓库文件 -->
-参考 [贡献指南](../CONTRIBUTING.md)。
+参考 [贡献指南](../CONTRIBUTING)。
 
 <!-- 从主仓库 README 链接到 Wiki -->
 详细教程请查看 [Wiki](../../wiki)。
@@ -181,7 +181,7 @@ Wiki 支持在页面中嵌入图片。你可以通过以下方式管理图片资
 
 支持。Wiki 编辑器完全支持 GFM 语法，包括 Mermaid 代码块。
 你可以像在 README 中一样使用 ` ```mermaid ` 语法绘制流程图、时序图等。
-参见 [README 与文档最佳实践](04-README与文档最佳实践.md) 中的 Mermaid 示例。
+参见 [README 与文档最佳实践](04-README与文档最佳实践) 中的 Mermaid 示例。
 
 ### Q: 如何限制谁可以编辑 Wiki？
 

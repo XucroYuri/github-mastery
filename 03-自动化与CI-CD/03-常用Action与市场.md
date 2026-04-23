@@ -4,7 +4,7 @@
 
 ## 概述
 
-在前两章中，你学习了 GitHub Actions 的核心概念和 [Workflow 语法详解](02-Workflow-语法详解.md)。但真正让 Workflow 强大的是丰富的 Action 生态——GitHub Marketplace 上有数以万计的 Action，覆盖了从代码检出、环境搭建到构建发布、通知集成的方方面面。
+在前两章中，你学习了 GitHub Actions 的核心概念和 [Workflow 语法详解](02-Workflow-语法详解)。但真正让 Workflow 强大的是丰富的 Action 生态——GitHub Marketplace 上有数以万计的 Action，覆盖了从代码检出、环境搭建到构建发布、通知集成的方方面面。
 
 Action 是 Workflow 中 Step 的可复用组件。你可以把 Action 理解为"函数"——它接收输入（`with`），执行逻辑，然后返回输出（`outputs`）。GitHub 官方维护了一系列高质量 Action（如 `actions/checkout`、`actions/setup-node`），社区也贡献了大量优秀的第三方 Action。掌握这些常用 Action 的配置技巧，能让你用最少的代码实现最复杂的自动化流程。
 

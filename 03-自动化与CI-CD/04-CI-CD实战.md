@@ -4,7 +4,7 @@
 
 ## 概述
 
-前三章我们学习了 [GitHub Actions 入门](01-GitHub-Actions-入门.md)、[Workflow 语法详解](02-Workflow-语法详解.md) 和 [常用Action与市场](03-常用Action与市场.md)。本章将把这些知识融会贯通，带你构建一条完整的 CI/CD 流水线——从代码提交到自动部署，覆盖测试、构建、发布和部署的全流程。
+前三章我们学习了 [GitHub Actions 入门](01-GitHub-Actions-入门)、[Workflow 语法详解](02-Workflow-语法详解) 和 [常用Action与市场](03-常用Action与市场)。本章将把这些知识融会贯通，带你构建一条完整的 CI/CD 流水线——从代码提交到自动部署，覆盖测试、构建、发布和部署的全流程。
 
 CI（Continuous Integration，持续集成）的核心是自动化验证：每次代码变更都自动运行测试、检查代码风格、分析代码质量，确保问题在合并前就被发现。CD（Continuous Delivery / Continuous Deployment，持续交付/部署）则更进一步：将通过验证的代码自动部署到目标环境。GitHub Actions 让你可以在同一个平台内完成从代码提交到生产部署的全部操作。
 
@@ -541,7 +541,7 @@ jobs:
 
 ### Q: 如何在 PR 中显示 CI 状态？
 
-GitHub 会自动在 PR 页面底部显示所有 Check 的状态。你只需要确保 Workflow 在 `on: pull_request` 事件上触发即可。如果需要在 PR 中添加评论，可以使用 `actions/github-script` 结合 [常用Action与市场](03-常用Action与市场.md) 中介绍的方法。
+GitHub 会自动在 PR 页面底部显示所有 Check 的状态。你只需要确保 Workflow 在 `on: pull_request` 事件上触发即可。如果需要在 PR 中添加评论，可以使用 `actions/github-script` 结合 [常用Action与市场](03-常用Action与市场) 中介绍的方法。
 
 ### Q: 如何控制部署的并发？
 
@@ -561,11 +561,11 @@ concurrency:
 
 ### Q: 可复用工作流可以调用其他可复用工作流吗？
 
-可以，但最多支持 4 层嵌套。可复用工作流不能调用自身（递归）。如果逻辑过于复杂，建议使用 [自定义 Action 开发](05-自定义Action开发.md) 中的 Composite Action 来封装。
+可以，但最多支持 4 层嵌套。可复用工作流不能调用自身（递归）。如果逻辑过于复杂，建议使用 [自定义 Action 开发](05-自定义Action开发) 中的 Composite Action 来封装。
 
 ### Q: 如何在 CD 流水线中使用 OIDC 认证？
 
-OIDC（OpenID Connect）允许 GitHub Actions 在不存储长期密钥的情况下访问云服务。详细配置参见 [安全与密钥管理](06-安全与密钥管理.md) 中的 OIDC 配置章节。
+OIDC（OpenID Connect）允许 GitHub Actions 在不存储长期密钥的情况下访问云服务。详细配置参见 [安全与密钥管理](06-安全与密钥管理) 中的 OIDC 配置章节。
 
 ## 参考链接
 
