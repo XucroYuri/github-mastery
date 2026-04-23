@@ -1,0 +1,116 @@
+/* GitHub 完全指南 — VitePress 自定义样式 */
+
+/* ── 品牌色 ── */
+:root {
+  --vp-c-brand-1: #0969da;
+  --vp-c-brand-2: #0550ae;
+  --vp-c-brand-3: #044f9e;
+  --vp-c-brand-soft: rgba(9, 105, 218, 0.14);
+}
+
+.dark {
+  --vp-c-brand-1: #58a6ff;
+  --vp-c-brand-2: #79c0ff;
+  --vp-c-brand-3: #4493f8;
+  --vp-c-brand-soft: rgba(88, 166, 255, 0.14);
+}
+
+/* ── 中文字体栈 ── */
+:root {
+  --vp-font-family-base: 'Inter', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei',
+    system-ui, -apple-system, sans-serif;
+  --vp-font-family-mono: 'JetBrains Mono', 'Fira Code', 'Noto Sans Mono',
+    ui-monospace, monospace;
+}
+
+/* ── Hero 区域增强 ── */
+.VPHero .name {
+  background: linear-gradient(135deg, var(--vp-c-brand-1), #8b5cf6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.VPHero .text {
+  letter-spacing: -0.02em;
+}
+
+/* ── Feature 卡片 ── */
+.VPFeature .title {
+  font-weight: 600;
+}
+
+.VPFeature:hover {
+  transform: translateY(-2px);
+  transition: transform 0.2s ease;
+}
+
+/* ── 侧栏章节标题 ── */
+.VPSidebar .VPSidebarItem.level-0 > .item .text {
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+/* ── 行内代码 ── */
+:not(pre) > code {
+  font-size: 0.9em;
+  border-radius: 4px;
+  padding: 0.15em 0.4em;
+}
+
+/* ── 代码块 ── */
+.vp-doc div[class*='language-'] {
+  border-radius: 8px;
+}
+
+.vp-doc div[class*='language-'] > button.copy {
+  border-radius: 4px;
+}
+
+/* ── 自定义容器样式 ── */
+.vp-doc .custom-block .custom-block-title {
+  font-weight: 700;
+}
+
+/* ── 表格 ── */
+.vp-doc table {
+  font-size: 0.9em;
+}
+
+.vp-doc th {
+  white-space: nowrap;
+}
+
+/* ── Mermaid 图表 ── */
+.mermaid {
+  text-align: center;
+  margin: 1.5em 0;
+}
+
+/* ── 页脚 ── */
+.VPFooter {
+  border-top: 1px solid var(--vp-c-divider);
+}
+
+/* ── 移动端适配 ── */
+@media (max-width: 768px) {
+  .vp-doc table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* ── 打印样式 ── */
+@media print {
+  .VPNav,
+  .VPSidebar,
+  .VPFooter,
+  .VPDocFooter {
+    display: none !important;
+  }
+
+  .VPContent {
+    padding: 0 !important;
+  }
+}
